@@ -1,0 +1,4 @@
+server:
+  port: 1000
+age: 99
+name: 李四
