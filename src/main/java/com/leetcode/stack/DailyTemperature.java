@@ -13,17 +13,12 @@ import java.util.Stack;
  * **/
 public class DailyTemperature {
     public static void main(String [] args){
-        Solution2 Solution=new Solution2();
         int[] arr={73,74,75,71,69,72,76,73};
         System.out.print(Arrays.toString(arr));
-        System.out.print(Arrays.toString(Solution.dailyTemperatures(arr)));
+        System.out.print(Arrays.toString(dailyTemperatures(arr)));
     }
-
-}
-
-//双层循环版
-class Solution1 {
-    public int[] dailyTemperatures(int[] temperatures) {
+    //双层循环版
+    private static int[] dailyTemperatures(int[] temperatures) {
         int temLen=temperatures.length;
         int [] intervalArray=new int[temperatures.length];
         for (int i=0;i<temLen;i++){
@@ -42,17 +37,14 @@ class Solution1 {
 
         return intervalArray;
     }
-}
-
-//单调栈
-class Solution2 {
-    public int[] dailyTemperatures(int[] temperatures) {
+    //单调栈
+    private static int[] dailyTemperatures2(int[] temperatures) {
         int [] intervalArray=new int[temperatures.length];
         Stack<Integer> stack=new Stack<Integer>();
         for (int i=0;i<temperatures.length;i++){
             while (!stack.empty()&&temperatures[i]>temperatures[stack.peek()]){
-                    Integer val=stack.pop();
-                    intervalArray[val]=i-val;
+                Integer val=stack.pop();
+                intervalArray[val]=i-val;
             }
             stack.push(i);
 
@@ -60,4 +52,46 @@ class Solution2 {
 
         return intervalArray;
     }
+
 }
+
+////双层循环版
+//class Solution1 {
+//    public int[] dailyTemperatures(int[] temperatures) {
+//        int temLen=temperatures.length;
+//        int [] intervalArray=new int[temperatures.length];
+//        for (int i=0;i<temLen;i++){
+//            int sum=0;
+//            for (int j=i;j<temLen;j++){
+//                if (temperatures[j]>temperatures[i]){
+//                    sum=j-i;
+//                    break;
+//                }
+//
+//            }
+//
+//            intervalArray[i]=sum;
+//
+//        }
+//
+//        return intervalArray;
+//    }
+//}
+//
+////单调栈
+//class Solution2 {
+//    public int[] dailyTemperatures(int[] temperatures) {
+//        int [] intervalArray=new int[temperatures.length];
+//        Stack<Integer> stack=new Stack<Integer>();
+//        for (int i=0;i<temperatures.length;i++){
+//            while (!stack.empty()&&temperatures[i]>temperatures[stack.peek()]){
+//                    Integer val=stack.pop();
+//                    intervalArray[val]=i-val;
+//            }
+//            stack.push(i);
+//
+//        }
+//
+//        return intervalArray;
+//    }
+//}
