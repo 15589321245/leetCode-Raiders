@@ -1,9 +1,8 @@
-package com.leetcode.stack;
+package com.leetcode.Stack;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
-import java.util.Stack;
 
 /**
  * 单调栈题目
