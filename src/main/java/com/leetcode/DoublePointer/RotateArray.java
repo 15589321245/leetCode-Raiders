@@ -1,9 +1,9 @@
-package com.leetcode.stack;
+package com.leetcode.DoublePointer;
 
 import java.util.Arrays;
 
 /**
- * 数组三次翻转
+ * 数组三次翻转,双指针
  * 189. 旋转数组
  * URL:https://leetcode-cn.com/problems/rotate-array/
  * 核心思想:

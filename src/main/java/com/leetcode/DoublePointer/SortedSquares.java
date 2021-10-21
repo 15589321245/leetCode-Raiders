@@ -1,4 +1,4 @@
-package com.leetcode.stack;
+package com.leetcode.DoublePointer;
 
 import java.util.Arrays;
 
