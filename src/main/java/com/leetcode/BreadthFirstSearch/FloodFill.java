@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Deque;
 
 /**
- * 单调递增站（栈底从大到小）
+ * 深度优先
  * 733. 图像渲染
  * URL:https://leetcode-cn.com/problems/flood-fill/
  * 核心思想:
@@ -30,6 +30,7 @@ public class FloodFill {
             if (sr<0 || sc<0 || sr>=image.length || sc>=image[sr].length || image[sr][sc]!=oldColor){
                   return;
             }
+            //如果要替换
             if (image[sr][sc]!=newColor){
                 image[sr][sc]=newColor;
                 //上
